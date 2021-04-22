@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="559.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StartController">
+   <children>
+      <ImageView fitHeight="601.0" fitWidth="608.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../images/charisse-kenion-xhWMi9wdQaE-unsplash.jpg" />
+         </image>
+      </ImageView>
+      <GridPane layoutX="4.0" layoutY="-35.0" prefHeight="552.0" prefWidth="604.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="10.0" prefWidth="131.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="10.0" prefWidth="136.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="157.0" minWidth="10.0" prefWidth="132.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="124.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="71.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="partner" mnemonicParsing="false" onAction="#handlePartnerPressed" text="Geschäftspartner" GridPane.columnIndex="2" />
+            <Button fx:id="login" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#handleLoginPressed" text="Login" GridPane.columnIndex="4" />
+            <Button fx:id="register" mnemonicParsing="false" onAction="#handleRegisterPressed" text="Registrieren" GridPane.columnIndex="3" />
+            <ImageView fitHeight="56.0" fitWidth="200.0">
+               <image>
+                  <Image url="@../images/formosaapp%20Logo.jpg" />
+               </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dein Beauty Termin einfacher buchen!" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="123.0" fitWidth="117.0" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../images/masha-sidorova-3MgVlh8Knxg-unsplash.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="123.0" fitWidth="117.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../images/carlos-magno-s63RoVQ40w8-unsplash.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="123.0" fitWidth="117.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../images/nina-strehl-7O1YZkFsNf0-unsplash%20copy.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="123.0" fitWidth="117.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../images/ignat-kushanrev-fAcbWAbFrGo-unsplash.jpg" />
+               </image>
+            </ImageView>
+            <RadioButton mnemonicParsing="false" text="Damen" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" text="Herren" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" text="Kinder" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </RadioButton>
+            <Button fx:id="salons" mnemonicParsing="false" onAction="#handleSalonsPressed" prefHeight="28.0" prefWidth="90.0" text="Salons" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <MenuButton mnemonicParsing="false" text="Behandlungen" GridPane.rowIndex="4">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+            </MenuButton>
+            <SplitMenuButton mnemonicParsing="false" text="Salonname" GridPane.columnIndex="1" GridPane.rowIndex="4">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+            </SplitMenuButton>
+            <DatePicker GridPane.columnIndex="2" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <Button fx:id="search" layoutX="198.0" layoutY="517.0" mnemonicParsing="false" onAction="#handleSearchPressed" text="Auf Formosa finden" />
+   </children>
+</AnchorPane>

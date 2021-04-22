@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="formosaPrototyp1" transaction-type="RESOURCE_LOCAL">
+		<non-jta-data-source>formosa_DB</non-jta-data-source>
+		<class>model.User</class>
+		<class>model.Service</class>
+		<class>model.Salon</class>
+		<class>model.Appointment</class>
+		<properties>
+			<property name="jakarta.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
+			<property name="jakarta.persistence.jdbc.url" value="jdbc:derby:formosa_DB; create=true"/>
+			<property name="jakarta.persistence.jdbc.user" value="laviniapopoviciu"/>
+			<property name="jakarta.persistence.jdbc.password" value="test"/>
+			<property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+		</properties>
+	</persistence-unit>
+</persistence>
