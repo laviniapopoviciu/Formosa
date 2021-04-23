@@ -3,9 +3,9 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 public class UserDataChangedDialog extends Dialog<ButtonType> {
 
-	public UserDataChangedDialog(String header, String content) {
-		this.setContentText(content);
-		this.setHeaderText(header);
+	public UserDataChangedDialog() {
+		this.setContentText("Daten wurden geändert");
+		this.setHeaderText("Info");
 		this.getDialogPane().getButtonTypes().add(ButtonType.OK);
 		this.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
 	}

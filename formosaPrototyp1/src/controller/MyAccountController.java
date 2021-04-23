@@ -4,7 +4,6 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-import at.wifiwien.javaswe.strawberry_fields.controller.GameEndedDialog;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,7 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
-public class MyAccountController {
+public class MyAccountController extends CommonPropertiesController {
 
     @FXML
     private ResourceBundle resources;
@@ -82,33 +81,23 @@ public class MyAccountController {
     }
 
   
- public void handleSaveInfo(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-	// show DataSavedDialog only if data saved
-//			if (newValue == true) {
-//				
-//				String dialogInfo = "";
-//				if (game.getWinner().isPresent()) {
-//					// Winner
-//					String winnerName = game.getWinner().map((w) -> w.getName()).orElse("Error: no winner");
-//					dialogInfo = winnerName + " " + resources.getString("winsMessage");
-//					
-//				} else {
-//					// Draw
-//					dialogInfo = resources.getString("drawMessage");
-//				}
-//				
-//				String dialogHeader = resources.getString("gameEnded");
-//				GameEndedDialog dialog = new GameEndedDialog(dialogHeader, dialogInfo);
-//				
-				// show dialog and wait for answer  
-//				Optional<ButtonType> result = dialog.showAndWait();
-//				if (result.isPresent()) {
-//					if (result.get() == ButtonType.OK) {
-//						System.out.println("Dialog ok");
-//					} else {
-//						System.out.println("Dialog cancel");
-//					}
-//				}
+ public void handleSaveInfo() {
+	// show DataSavedDialog data saved
+
+	 
+	 
+	 saveInfo.setOnAction(e -> {
+			UserDataChangedDialog dialog = new UserDataChangedDialog();
+			Optional<ButtonType> result = dialog.showAndWait();
+			if(result.isPresent()) {
+				if(result.get() == ButtonType.OK) {
+					System.out.println("This");
+				} else {
+					System.out.println("That");
+				}
+			}
+			
+		});
 
 				
 			}

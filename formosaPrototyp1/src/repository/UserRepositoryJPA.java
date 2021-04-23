@@ -81,7 +81,7 @@ public class UserRepositoryJPA implements UserRepository{
 	@Override
 	public List<User> readAll() {
 		
-		List<User> photos = new ArrayList<>();
+		List<User> users = new ArrayList<>();
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTANCE_UNIT_NAME);
 		EntityManager em = emf.createEntityManager();
@@ -99,7 +99,7 @@ public class UserRepositoryJPA implements UserRepository{
 		emf.close();
 		
 		
-		return photos;
+		return users;
 	}
 
 	@Override

@@ -10,7 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class RegisterController {
+public class RegisterController extends CommonPropertiesController{
 
     @FXML
     private ResourceBundle resources;

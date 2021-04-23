@@ -12,7 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class PartnerController {
+public class PartnerController extends CommonPropertiesController {
 
     @FXML
     private ResourceBundle resources;

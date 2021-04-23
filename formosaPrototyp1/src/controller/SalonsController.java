@@ -11,7 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.stage.Stage;
 
-public class SalonsController {
+public class SalonsController extends CommonPropertiesController{
 
     @FXML
     private ResourceBundle resources;
