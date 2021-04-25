@@ -8,6 +8,12 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Persistence;
+import model.User;
+
 
 public class DatabaseCreator {
 	public static void main(String[] args) {
@@ -18,62 +24,78 @@ public class DatabaseCreator {
 	}
 private static void dropOldDatabase() {
 		
-		try {
-			Connection con = DriverManager.getConnection("jdbc:derby:formosa_DB; create=true; user=lavinia; passwort=test");
-			System.out.println("Connection established");
-			
-			Statement stmt = con.createStatement();
-			
-			stmt.execute("DROP TABLE ACC_FORMOSA");
-			System.out.println("Table ACC_FORMOSA dropped");
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-		}
-		
-		
+//		try {
+//			Connection con = DriverManager.getConnection("jdbc:derby:formosa_DB; create=true; user=lavinia; passwort=test");
+//			System.out.println("Connection established");
+//			
+//			Statement stmt = con.createStatement();
+//			
+//			stmt.execute("DROP TABLE ACC_FORMOSA");
+//			System.out.println("Table ACC_FORMOSA dropped");
+//		} catch (SQLException e) {
+//			
+//			e.printStackTrace();
+//		}
+//		
+//		
 	}
 
 	private static void createNewDatabase() {
 		
-		try {
-			Connection con = DriverManager.getConnection("jdbc:derby:formosa_DB; create=true; user=lavinia; passwort=test");
-			System.out.println("Connection established");
-			
-			Statement stmt = con.createStatement();
-			
-			stmt.execute("CREATE TABLE ACC_FORMOSA (id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY, " + "username VARCHAR(255), " 
-						+ "service VARCHAR(255))" + "salon VARCHAR(255))" );
-			System.out.println("New Table created");
-			
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-		}
+//		try {
+//			Connection con = DriverManager.getConnection("jdbc:derby:formosa_DB; create=true; user=lavinia; passwort=test");
+//			System.out.println("Connection established");
+//			
+//			Statement stmt = con.createStatement();
+//			
+//			stmt.execute("CREATE TABLE ACC_FORMOSA (id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY, " + "username VARCHAR(255), " 
+//						+ "service VARCHAR(255))" + "salon VARCHAR(255))" );
+//			System.out.println("New Table created");
+//			
+//		} catch (SQLException e) {
+//			
+//			e.printStackTrace();
+//		}
 
 	}
 
 private static void insertDummyData() {
 		
-		try {
-			Connection con = DriverManager.getConnection("jdbc:derby:formosa_DB; create=true; user=lavinia; password=true");
-			System.out.println("Connection established");
-			
-			PreparedStatement pStmt = con.prepareStatement("INSERT INTO ACC_FORMOSA (username, service, salon) VALUES(?, ?)");
-			
-//			pStmt.setLong(1, 1);
-			pStmt.setString(1,"Lavinia");
-			pStmt.setString(2, "Haircut");
-			pStmt.setString(3, "LaruBeauty");
-			
-			int rowsChanged = pStmt.executeUpdate();
-			System.out.println("Rows changed " + rowsChanged);
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			Connection con = DriverManager.getConnection("jdbc:derby:formosa_DB; create=true; user=lavinia; password=true");
+//			System.out.println("Connection established");
+//			
+//			PreparedStatement pStmt = con.prepareStatement("INSERT INTO ACC_FORMOSA (username, service, salon) VALUES(?, ?)");
+//			
+////			pStmt.setLong(1, 1);
+//			pStmt.setString(1,"Lavinia");
+//			pStmt.setString(2, "Haircut");
+//			pStmt.setString(3, "LaruBeauty");
+//			
+//			int rowsChanged = pStmt.executeUpdate();
+//			System.out.println("Rows changed " + rowsChanged);
+//			
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("formosa_DB");
+		EntityManager em = emf.createEntityManager();
 		
+		EntityTransaction et = em.getTransaction();
+
+
+		User user = new User("Lavi", "test", "Lavinia", "Popoviciu", "lavinia.popovciu@hotmail.com");
+		
+		
+		et.begin();
+		
+		em.persist(user);
+		
+		et.commit();
+		
+		em.close();
+		emf.close();
 		
 	}
 }

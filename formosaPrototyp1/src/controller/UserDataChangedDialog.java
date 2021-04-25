@@ -7,6 +7,6 @@ public class UserDataChangedDialog extends Dialog<ButtonType> {
 		this.setContentText("Daten wurden geändert");
 		this.setHeaderText("Info");
 		this.getDialogPane().getButtonTypes().add(ButtonType.OK);
-		this.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+
 	}
 }

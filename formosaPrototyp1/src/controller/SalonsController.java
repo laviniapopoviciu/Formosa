@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.stage.Stage;
 
 public class SalonsController extends CommonPropertiesController{
@@ -45,6 +46,9 @@ public class SalonsController extends CommonPropertiesController{
 
     @FXML
     private Button register;
+    
+    @FXML
+    private TabPane salonTabPane;
 
     @FXML
     void handleCorleoneBarbershopSelected(ActionEvent event) {
@@ -218,5 +222,7 @@ public class SalonsController extends CommonPropertiesController{
         assert login != null : "fx:id=\"login\" was not injected: check your FXML file 'Salons.fxml'.";
         assert register != null : "fx:id=\"register\" was not injected: check your FXML file 'Salons.fxml'.";
 
+        
+   //     salonsTabPane.getChildren().add(tab);
     }
 }

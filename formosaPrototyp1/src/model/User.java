@@ -2,13 +2,20 @@ package model;
 
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.NamedQuery;
+import jakarta.persistence.OneToMany;
 
 
 @Entity
+@NamedQuery(name = "readAllUsers", query = "select us from User us")
 public class User implements Serializable {
 
 	@Id
@@ -18,17 +25,19 @@ public class User implements Serializable {
 	private String password;
 	private String firstName;
 	private String lastName;
+	private String email;
 	 
-
+	@OneToMany(cascade = CascadeType.PERSIST)
+	private List<Appointment> appointments;
 
 	public User() {
 
 	}
 
-	public User(long id, String username,String password, String firstName, String lastName) {
+	public User(String username,String password, String firstName, String lastName, String email) {
 
 		super();
-		this.id=id;
+		this.email=email;
 		this.username = username;
 		this.password = password;
 		this.firstName = firstName;
@@ -38,13 +47,14 @@ public class User implements Serializable {
 	}
 
 	// For the Database
-	public User(Long id, String username, String password, String firstName, String lastName) {
+	public User(Long id, String username, String password, String firstName, String lastName, String email) {
 		super();
 		this.id = id;
 		this.username=username;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.email=email;
 		
 	}
 
@@ -78,6 +88,14 @@ public class User implements Serializable {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	 

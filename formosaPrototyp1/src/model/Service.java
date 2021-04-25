@@ -14,9 +14,7 @@ import jakarta.persistence.OneToOne;
 @Entity
 public class Service implements Serializable {
 
-	public enum serviceType {MANIKÜRE, PEDIKÜRE,HAARSCHNITT, KOSMETIKBEHANDLUNG, MASSAGE, HAARENTFERNUNG, 
-
-	}
+	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
