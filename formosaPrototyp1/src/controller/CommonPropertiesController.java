@@ -55,7 +55,7 @@ public class CommonPropertiesController {
 	
 	// Account entity repository
 		static UserRepository userRepository = new UserRepositoryJPA();  
-		static ObservableList<User> userList = FXCollections.observableArrayList(UserRepository.readAll()); //reads all Users List
+//		static ObservableList<User> userList = FXCollections.observableArrayList(UserRepository.readAll()); //reads all Users List
 		static ObjectProperty<User> selectedUser = new SimpleObjectProperty<User>(); //selects current User
 
 		

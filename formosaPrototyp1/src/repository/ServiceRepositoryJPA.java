@@ -13,7 +13,7 @@ import model.Service;
 
  public class ServiceRepositoryJPA  implements ServiceRepository{
 	
-	private static final String PERSISTANCE_UNIT_NAME = "service_jpa";
+	private static final String PERSISTANCE_UNIT_NAME = "formosa_DB";
 
 	@Override
 	public void add(Service service) {

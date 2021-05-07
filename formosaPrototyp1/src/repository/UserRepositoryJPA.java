@@ -15,7 +15,7 @@ import model.User;
 
 public class UserRepositoryJPA implements UserRepository{
 	
-	private static final String PERSISTANCE_UNIT_NAME = "user_jpa";
+	private static final String PERSISTANCE_UNIT_NAME = "formosa_DB";
 
 	public void add(User user) {
 		
@@ -46,14 +46,14 @@ public class UserRepositoryJPA implements UserRepository{
 		
 		transaction.begin();
 		
-	//   User updateAccount = em.updateAccount(user);
+	 User updateAccount = em.merge(user);
 		
 		transaction.commit();
 		
 		em.close();
 		emf.close();
 		
-		return user;
+		return updateAccount;
 	}
 
 	@Override

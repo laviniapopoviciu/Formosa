@@ -1,96 +1,53 @@
 package db;
 
 
+import java.util.Date;
+import java.util.List;
+
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
+import model.Appointment;
+import model.Salon;
+import model.Service;
+import model.ServiceType;
 import model.User;
 
 
 public class DatabaseCreator {
 	public static void main(String[] args) {
-//		dropOldDatabase(); //Schema und alte DB  geloescht
-//		createNewDatabase(); // schema wird hier angelegt
+
 		insertDummyData();
-
 	}
-private static void dropOldDatabase() {
-		
-//		try {
-//			Connection con = DriverManager.getConnection("jdbc:derby:formosa_DB; create=true; user=lavinia; passwort=test");
-//			System.out.println("Connection established");
-//			
-//			Statement stmt = con.createStatement();
-//			
-//			stmt.execute("DROP TABLE ACC_FORMOSA");
-//			System.out.println("Table ACC_FORMOSA dropped");
-//		} catch (SQLException e) {
-//			
-//			e.printStackTrace();
-//		}
-//		
-//		
-	}
+		private static void createNewDatabase() {
 
-	private static void createNewDatabase() {
-		
-//		try {
-//			Connection con = DriverManager.getConnection("jdbc:derby:formosa_DB; create=true; user=lavinia; passwort=test");
-//			System.out.println("Connection established");
-//			
-//			Statement stmt = con.createStatement();
-//			
-//			stmt.execute("CREATE TABLE ACC_FORMOSA (id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY, " + "username VARCHAR(255), " 
-//						+ "service VARCHAR(255))" + "salon VARCHAR(255))" );
-//			System.out.println("New Table created");
-//			
-//		} catch (SQLException e) {
-//			
-//			e.printStackTrace();
-//		}
+		}
 
-	}
+		private static void dropOldTable() {
+
+		}
 
 private static void insertDummyData() {
-		
-//		try {
-//			Connection con = DriverManager.getConnection("jdbc:derby:formosa_DB; create=true; user=lavinia; password=true");
-//			System.out.println("Connection established");
-//			
-//			PreparedStatement pStmt = con.prepareStatement("INSERT INTO ACC_FORMOSA (username, service, salon) VALUES(?, ?)");
-//			
-////			pStmt.setLong(1, 1);
-//			pStmt.setString(1,"Lavinia");
-//			pStmt.setString(2, "Haircut");
-//			pStmt.setString(3, "LaruBeauty");
-//			
-//			int rowsChanged = pStmt.executeUpdate();
-//			System.out.println("Rows changed " + rowsChanged);
-//			
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-	
- 
- 
+
 	
 	
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("formosa_DB");
 		EntityManager em = emf.createEntityManager();
 		
 		EntityTransaction et = em.getTransaction();
-
-	//	List<Salon> salonList = List.of(new Salon(0l,"LaruBeauty", appointments));
-
 		
-
+		List<Service> services = List.of(new Service(ServiceType.HAARSCHNITT, 99.0));
 		
+		
+		Salon salon = new Salon(services, null,  "LaruBeauty", "Dein Beautywelt für alle Beautyleistungen",
+				"Kärntenstraße 10, 1010 Wien");
 
+	List<Salon> salonList = List.of(new Salon(0l, ServiceType , List<Appointment> appointments, "LaruBeauty", "Dein Beautywelt für alle Beautyleistungen",
+			"Kärntenstraße 10, 1010 Wien"));
+	List<Appointment> appointmentList = List.of( new Appointment(0l, "LaruBeauty", ServiceType.HAARSCHNITT, user, "20.05.2021 10:30", "20.05.2021 11:30"));
 	
-		User user = new User(1l,"Lavi", "test", "Lavinia", "Popoviciu", "lavinia.popovciu@hotmail.com");
-		
+	User user = new User(1l,"Lavi", "test", "Lavinia", "Popoviciu", "lavinia.popovciu@hotmail.com");
 		
 		et.begin();
 		

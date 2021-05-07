@@ -16,7 +16,7 @@ import model.Appointment;
 
  public class AppointmentRepositoryJPA   implements AppointmentRepository{
 	
-	private static final String PERSISTANCE_UNIT_NAME = "appointment_jpa";
+	private static final String PERSISTANCE_UNIT_NAME = "formosa_DB";
 
 
 

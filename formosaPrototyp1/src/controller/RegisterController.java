@@ -17,9 +17,9 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import model.Account;
+
 import model.User;
-import model.YearList;
+
 import repository.UserRepository;
 
 public class RegisterController extends CommonPropertiesController{

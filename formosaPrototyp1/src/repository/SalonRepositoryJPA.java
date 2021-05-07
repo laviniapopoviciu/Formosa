@@ -16,7 +16,7 @@ import model.Service;
 
  public class SalonRepositoryJPA   implements SalonRepository{
 	
-	private static final String PERSISTANCE_UNIT_NAME = "salon_jpa";
+	private static final String PERSISTANCE_UNIT_NAME = "formosa_DB";
 
 
 

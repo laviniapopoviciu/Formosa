@@ -127,23 +127,23 @@ Stage primaryStage = (Stage) start.getScene().getWindow();
         assert login != null : "fx:id=\"login\" was not injected: check your FXML file 'Salons.fxml'.";
         assert register != null : "fx:id=\"register\" was not injected: check your FXML file 'Salons.fxml'.";
 
-        button.setText("New");
-    	
-    	
-    	for (model.Salon s : salonListFromDatabase) {
-    	FXMLLoader loader = new FXMLLoader();
-    	loader.setLocation(getClass().getResource("/fxml/tab.fxml"));
-    	Parent root = loader.load();
-    	
-    	Tab tab = new Tab("LaruBeauty", root);
-    	Tab tab1 = new Tab("DonCorleone Barbershop", root);
-    	
-    	
-   	tabPane.getChildrenUnmodifiable();
-    	}
-    	     
-    
-        
-      Tab selectedTab = tabPane.getSelectionModel().getSelectedItem();
+//        button.setText("New");
+//    	
+//    	
+//    	for (model.Salon s : salonListFromDatabase) {
+//    	FXMLLoader loader = new FXMLLoader();
+//    	loader.setLocation(getClass().getResource("/fxml/tab.fxml"));
+//    	Parent root = loader.load();
+//    	
+//    	Tab tab = new Tab("LaruBeauty", root);
+//    	Tab tab1 = new Tab("DonCorleone Barbershop", root);
+//    	
+//    	
+//   	tabPane.getChildrenUnmodifiable();
+//    	}
+//    	     
+//    
+//        
+//      Tab selectedTab = tabPane.getSelectionModel().getSelectedItem();
     }
 }
