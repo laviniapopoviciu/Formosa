@@ -35,179 +35,76 @@ public class StartController extends CommonPropertiesController{
 
     @FXML
     void handleLoginPressed(ActionEvent event) {
-    	Stage primaryStage = (Stage) login.getScene().getWindow();
-    	primaryStage.close();
+Stage primaryStage = (Stage) login.getScene().getWindow();
+    	
     	/*
     	 *  
     	 * 
     	 */
     	
-    
     	
-    	try { // Hier wird die zweite Fenster geöffnet
-
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/application/Login.fxml"));
-
-			Parent root = (Parent) loader.load();
-
-			 
-													
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-			stage.setScene(scene);
-	 
-			stage.show();
-			
-			primaryStage.hide(); // dazu
-			
-		} catch (Exception e) {
-			System.err.println("Cannot load Login");
-			e.printStackTrace();
-		}
+    	 goToScene(PATH_TO_LOGIN_FXML);
+    	 primaryStage.close();
+		
     }
     
 
     @FXML
     void handlePartnerPressed(ActionEvent event) {
-    	Stage primaryStage = (Stage) partner.getScene().getWindow();
-    	primaryStage.close();
+Stage primaryStage = (Stage) partner.getScene().getWindow();
+    	
     	/*
     	 *  
     	 * 
     	 */
     	
     	
-    	try { // Hier wird die zweite Fenster geöffnet
-
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/application/Partner.fxml"));
-
-			Parent root = (Parent) loader.load();
-
-			 
-													
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-			stage.setScene(scene);
-  
-			stage.show();
-			
-			primaryStage.hide(); // dazu
-			
-		} catch (Exception e) {
-			System.err.println("Cannot load Partner");
-			e.printStackTrace();
-		}
+    	 goToScene(PATH_TO_PARTNER_FXML);
+    	 primaryStage.close();
+		
     }
 
     @FXML
     void handleRegisterPressed(ActionEvent event) {
-    	Stage primaryStage = (Stage) register.getScene().getWindow();
-    	primaryStage.close();
+Stage primaryStage = (Stage) register.getScene().getWindow();
+    	
     	/*
     	 *  
     	 * 
     	 */
     	
     	
-    	try { // Hier wird die zweite Fenster geöffnet
-
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/application/Register.fxml"));
-
-			Parent root = (Parent) loader.load();
-
-			 
-													
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-			stage.setScene(scene);
-			
-			stage.show();
-			
-			primaryStage.hide(); // dazu
-			
-		} catch (Exception e) {
-			System.err.println("Cannot load Register");
-			e.printStackTrace();
-		}
+    	 goToScene(PATH_TO_REGISTER_FXML);
+    	 primaryStage.close();
+		
     }
-
     @FXML
     void handleSalonsPressed(ActionEvent event) {
-    	Stage primaryStage = (Stage) salons.getScene().getWindow(); //schimba denumirea primaryStage in altceva
-    	primaryStage.close();
+Stage primaryStage = (Stage) salons.getScene().getWindow();
+    	
     	/*
     	 *  
     	 * 
     	 */
     	
     	
-    	try { // Hier wird die zweite Fenster geöffnet
-
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/application/Salons.fxml"));
-
-			Parent root = (Parent) loader.load();
-
-			 
-													
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-			stage.setScene(scene);
-			
-			stage.show();
-			
-			primaryStage.hide(); // dazu
-			
-		} catch (Exception e) {
-			System.err.println("Cannot load Salons");
-			e.printStackTrace();
-		}
+    	 goToScene(PATH_TO_SALONS_FXML);
+    	 primaryStage.close();
+		
     }
-
     @FXML
     void handleSearchPressed(ActionEvent event) {
-    	Stage primaryStage = (Stage) search.getScene().getWindow();
-    	primaryStage.close();
+Stage primaryStage = (Stage) search.getScene().getWindow();
+    	
     	/*
     	 *  
     	 * 
     	 */
     	
     	
-    	// berechne searchResults
-    	
-    	// speichere searchResults in CPC
-    	
-    	try { // Hier wird die zweite Fenster geöffnet
-
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/application/SearchResult.fxml"));
-
-			Parent root = (Parent) loader.load();
-			//SearchResultController controller = loader.getController();
-			
-			//controller.setSearchResults();
-			
-			
-			 
-													
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-			stage.setScene(scene);
-			
-			//stage.setOnHidden(e -> primaryStage.show()); // in plus
-			
-			stage.show();
-			
-			primaryStage.hide(); // dazu
-			
-		} catch (Exception e) {
-			System.err.println("Cannot load Search Results");
-			e.printStackTrace();
-		}
+    	 goToScene(PATH_TO_SEARCH_RESULT_FXML);
+    	 primaryStage.close();
+		
     }
 
     @FXML

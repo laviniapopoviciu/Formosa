@@ -31,32 +31,32 @@
                <center>
                   <VBox alignment="BOTTOM_LEFT" prefHeight="236.0" prefWidth="205.0" BorderPane.alignment="CENTER">
                      <children>
-                        <TextField prefHeight="27.0" prefWidth="578.0">
+                        <TextField fx:id="usernameTextField" prefHeight="27.0" prefWidth="578.0">
                            <VBox.margin>
                               <Insets top="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField>
+                        <TextField fx:id="firstNameTextField">
                            <VBox.margin>
                               <Insets top="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField>
+                        <TextField fx:id="lastNameTextField">
                            <VBox.margin>
                               <Insets top="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField layoutX="10.0" layoutY="94.0">
+                        <TextField fx:id="emailTextField" layoutX="10.0" layoutY="94.0">
                            <VBox.margin>
                               <Insets top="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <PasswordField layoutX="10.0" layoutY="168.0">
+                        <PasswordField fx:id="passwordTextField" layoutX="10.0" layoutY="168.0">
                            <VBox.margin>
                               <Insets top="10.0" />
                            </VBox.margin>
                         </PasswordField>
-                        <PasswordField layoutX="10.0" layoutY="168.0">
+                        <PasswordField fx:id="confirmPasswordTextField" layoutX="10.0" layoutY="168.0">
                            <VBox.margin>
                               <Insets top="10.0" />
                            </VBox.margin>

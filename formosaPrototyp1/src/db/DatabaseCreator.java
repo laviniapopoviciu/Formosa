@@ -1,13 +1,6 @@
 package db;
 
 
-import java.sql.Connection;
-
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
-
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
@@ -17,8 +10,8 @@ import model.User;
 
 public class DatabaseCreator {
 	public static void main(String[] args) {
-		dropOldDatabase(); //Schema und alte DB  geloescht
-		createNewDatabase(); // schema wird hier angelegt
+//		dropOldDatabase(); //Schema und alte DB  geloescht
+//		createNewDatabase(); // schema wird hier angelegt
 		insertDummyData();
 
 	}
@@ -79,13 +72,24 @@ private static void insertDummyData() {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
+	
+ 
+ 
+	
+	
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("formosa_DB");
 		EntityManager em = emf.createEntityManager();
 		
 		EntityTransaction et = em.getTransaction();
 
+	//	List<Salon> salonList = List.of(new Salon(0l,"LaruBeauty", appointments));
 
-		User user = new User("Lavi", "test", "Lavinia", "Popoviciu", "lavinia.popovciu@hotmail.com");
+		
+
+		
+
+	
+		User user = new User(1l,"Lavi", "test", "Lavinia", "Popoviciu", "lavinia.popovciu@hotmail.com");
 		
 		
 		et.begin();

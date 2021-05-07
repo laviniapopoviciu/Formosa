@@ -34,70 +34,32 @@ public class SearchResultController extends CommonPropertiesController{
 
     @FXML
     void handleMyAccountPressed(ActionEvent event) {
-    	Stage primaryStage = (Stage) MyAccount.getScene().getWindow();
-    	primaryStage.close();
+Stage primaryStage = (Stage) MyAccount.getScene().getWindow();
+    	
     	/*
-    	 *  hier kommt noch connection zum Datenbank
+    	 *  
     	 * 
     	 */
     	
-    
     	
-    	try { // Hier wird die zweite Fenster geöffnet
-
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/application/MyAccount.fxml"));
-
-			Parent root = (Parent) loader.load();
-
-			 
-													
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-			stage.setScene(scene);
-	 
-			stage.show();
-			
-			primaryStage.hide(); // dazu
-			
-		} catch (Exception e) {
-			System.err.println("Cannot load MyAccount");
-			e.printStackTrace();
-		}
+    	 goToScene(PATH_TO_MY_ACCOUNT_FXML);
+    	 primaryStage.close();
+		
     }
 
     @FXML
     void handlePartnerPressed(ActionEvent event) {
-    	Stage primaryStage = (Stage) partner.getScene().getWindow();
-    	primaryStage.close();
+Stage primaryStage = (Stage) partner.getScene().getWindow();
+    	
     	/*
-    	 *  hier kommt noch connection zum Datenbank
+    	 *  
     	 * 
     	 */
     	
-    
     	
-    	try { // Hier wird die zweite Fenster geöffnet
-
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/application/Partner.fxml"));
-
-			Parent root = (Parent) loader.load();
-
-			 
-													
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-			stage.setScene(scene);
-	 
-			stage.show();
-			
-			primaryStage.hide(); // dazu
-			
-		} catch (Exception e) {
-			System.err.println("Cannot load Partner");
-			e.printStackTrace();
-		}
+    	 goToScene(PATH_TO_PARTNER_FXML);
+    	 primaryStage.close();
+		
     }
 
     @FXML

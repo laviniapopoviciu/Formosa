@@ -2,7 +2,6 @@ package model;
 
 
 import java.io.Serializable;
-import java.math.BigInteger;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,7 +21,7 @@ public class Service implements Serializable {
 	
 	
 	@ManyToMany
-	private Salon salon;
+	List Salon salon;
 	
 	@OneToOne
 	private Appointment appointment;

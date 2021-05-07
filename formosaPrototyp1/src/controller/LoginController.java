@@ -37,102 +37,45 @@ public class LoginController extends CommonPropertiesController {
 
     @FXML
     void handleLoginPressed(ActionEvent event) {
-    	Stage primaryStage = (Stage) login.getScene().getWindow();
-    	primaryStage.close();
+Stage primaryStage = (Stage) start.getScene().getWindow();
+    	
     	/*
     	 *  
     	 * 
     	 */
     	
-    
     	
-    	try { // Hier wird die zweite Fenster geöffnet
-
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/application/Login.fxml"));
-
-			Parent root = (Parent) loader.load();
-
-			 
-													
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-			stage.setScene(scene);
-	 
-			stage.show();
-			
-			primaryStage.hide(); // dazu
-			
-		} catch (Exception e) {
-			System.err.println("Cannot load Login");
-			e.printStackTrace();
-		}
+    	 goToScene(PATH_TO_LOGIN_FXML);
+    	 primaryStage.close();
+		
     }
 
     @FXML
     void handlePartnerPressed(ActionEvent event) {
     	Stage primaryStage = (Stage) start.getScene().getWindow();
-    	primaryStage.close();
+    	
     	/*
     	 *  
     	 * 
     	 */
     	
     	
-    	try { // Hier wird die zweite Fenster geöffnet
-
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/application/Partner.fxml"));
-
-			Parent root = (Parent) loader.load();
-
-			 
-													
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-			stage.setScene(scene);
-  
-			stage.show();
-			
-			primaryStage.hide(); // dazu
-			
-		} catch (Exception e) {
-			System.err.println("Cannot load Partner");
-			e.printStackTrace();
-		}
+    	 goToScene(PATH_TO_START_FXML);
+    	 primaryStage.close();
     }
 
     @FXML
     void handleStartPressed(ActionEvent event) {
-    	Stage primaryStage = (Stage) start.getScene().getWindow();
-    	primaryStage.close();
+Stage primaryStage = (Stage) start.getScene().getWindow();
+    	
     	/*
     	 *  
     	 * 
     	 */
     	
     	
-    	try { // Hier wird die zweite Fenster geöffnet
-
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/application/Start.fxml"));
-
-			Parent root = (Parent) loader.load();
-
-			 
-													
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-			stage.setScene(scene);
-  
-			stage.show();
-			
-			primaryStage.hide(); // dazu
-			
-		} catch (Exception e) {
-			System.err.println("Cannot load Start");
-			e.printStackTrace();
-		}
+    	 goToScene(PATH_TO_PARTNER_FXML);
+    	 primaryStage.close();
     }
 
     @FXML

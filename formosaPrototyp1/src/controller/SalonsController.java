@@ -2,12 +2,15 @@ package controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.stage.Stage;
@@ -20,21 +23,7 @@ public class SalonsController extends CommonPropertiesController{
     @FXML
     private URL location;
 
-    @FXML
-    private Tab LaruBeauty;
-
-    @FXML
-    private Tab HiltonSpa;
-
-    @FXML
-    private Tab CorleoneBarbershop;
-
-    @FXML
-    private Tab LuxBeauty;
-
-    @FXML
-    private Tab LPBeauty;
-
+   
     @FXML
     private Button partner;
 
@@ -50,60 +39,37 @@ public class SalonsController extends CommonPropertiesController{
     @FXML
     private TabPane salonTabPane;
 
+  
     @FXML
-    void handleCorleoneBarbershopSelected(ActionEvent event) {
-
-    }
-
-    @FXML
-    void handleHiltonSpaSelected(ActionEvent event) {
-
-    }
+    private Label label;
 
     @FXML
-    void handleLPBeauty(ActionEvent event) {
-
-    }
+    private Button button;
+    
+    @FXML
+    private TabPane tabPane;
+    
+    
 
     @FXML
-    void handleLaruBeautySelected(ActionEvent event) {
-
+    void buttonPressed(ActionEvent event) {
+    	label.setText("Button was pressed");
     }
 
     @FXML
     void handleLoginPressed(ActionEvent event) {
-    	Stage primaryStage = (Stage) login.getScene().getWindow();
-    	primaryStage.close();
+Stage primaryStage = (Stage) start.getScene().getWindow();
+    	
     	/*
-    	 *  hier kommt noch connection zum Datenbank
+    	 *  
     	 * 
     	 */
     	
-    
     	
-    	try { // Hier wird die zweite Fenster geöffnet
-
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/application/Login.fxml"));
-
-			Parent root = (Parent) loader.load();
-
-			 
-													
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-			stage.setScene(scene);
-	 
-			stage.show();
-			
-			primaryStage.hide(); // dazu
-			
-		} catch (Exception e) {
-			System.err.println("Cannot load Login");
-			e.printStackTrace();
-		}
+    	 goToScene(PATH_TO_LOGIN_FXML);
+    	 primaryStage.close();
+		
     }
-
     @FXML
     void handleLuxBeautySelected(ActionEvent event) {
 
@@ -111,118 +77,73 @@ public class SalonsController extends CommonPropertiesController{
 
     @FXML
     void handlePartnerPressed(ActionEvent event) {
-    	Stage primaryStage = (Stage) partner.getScene().getWindow();
-    	primaryStage.close();
+Stage primaryStage = (Stage) start.getScene().getWindow();
+    	
     	/*
     	 *  
     	 * 
     	 */
     	
     	
-    	try { // Hier wird die zweite Fenster geöffnet
-
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/application/Partner.fxml"));
-
-			Parent root = (Parent) loader.load();
-
-			 
-													
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-			stage.setScene(scene);
-  
-			stage.show();
-			
-			primaryStage.hide(); // dazu
-			
-		} catch (Exception e) {
-			System.err.println("Cannot load Partner");
-			e.printStackTrace();
-		}
+    	 goToScene(PATH_TO_PARTNER_FXML);
+    	 primaryStage.close();
+		
     }
-
     @FXML
     void handleRegisterPressed(ActionEvent event) {
-    	Stage primaryStage = (Stage) register.getScene().getWindow();
-    	primaryStage.close();
+Stage primaryStage = (Stage) start.getScene().getWindow();
+    	
     	/*
-    	 *  hier kommt noch connection zum Datenbank
+    	 *  
     	 * 
     	 */
     	
-    
     	
-    	try { // Hier wird die zweite Fenster geöffnet
-
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/application/Register.fxml"));
-
-			Parent root = (Parent) loader.load();
-
-			 
-													
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-			stage.setScene(scene);
-	 
-			stage.show();
-			
-			primaryStage.hide(); // dazu
-			
-		} catch (Exception e) {
-			System.err.println("Cannot load Register");
-			e.printStackTrace();
-		}
+    	 goToScene(PATH_TO_REGISTER_FXML);
+    	 primaryStage.close();
+		
     }
 
     @FXML
     void handleStartPressed(ActionEvent event) {
-    	Stage primaryStage = (Stage) start.getScene().getWindow();
-    	primaryStage.close();
+Stage primaryStage = (Stage) start.getScene().getWindow();
+    	
     	/*
-    	 *  hier kommt noch connection zum Datenbank
+    	 *  
     	 * 
     	 */
     	
-    
     	
-    	try { // Hier wird die zweite Fenster geöffnet
-
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/application/Start.fxml"));
-
-			Parent root = (Parent) loader.load();
-
-			 
-													
-			Scene scene = new Scene(root);
-			Stage stage = new Stage();
-			stage.setScene(scene);
-	 
-			stage.show();
-			
-			primaryStage.hide(); // dazu
-			
-		} catch (Exception e) {
-			System.err.println("Cannot load Start");
-			e.printStackTrace();
-		}
+    	 goToScene(PATH_TO_START_FXML);
+    	 primaryStage.close();
+		
     }
 
     @FXML
     void initialize() {
-        assert LaruBeauty != null : "fx:id=\"LaruBeauty\" was not injected: check your FXML file 'Salons.fxml'.";
-        assert HiltonSpa != null : "fx:id=\"HiltonSpa\" was not injected: check your FXML file 'Salons.fxml'.";
-        assert CorleoneBarbershop != null : "fx:id=\"CorleoneBarbershop\" was not injected: check your FXML file 'Salons.fxml'.";
-        assert LuxBeauty != null : "fx:id=\"LuxBeauty\" was not injected: check your FXML file 'Salons.fxml'.";
-        assert LPBeauty != null : "fx:id=\"LPBeauty\" was not injected: check your FXML file 'Salons.fxml'.";
+ 
         assert partner != null : "fx:id=\"partner\" was not injected: check your FXML file 'Salons.fxml'.";
         assert start != null : "fx:id=\"start\" was not injected: check your FXML file 'Salons.fxml'.";
         assert login != null : "fx:id=\"login\" was not injected: check your FXML file 'Salons.fxml'.";
         assert register != null : "fx:id=\"register\" was not injected: check your FXML file 'Salons.fxml'.";
 
+        button.setText("New");
+    	
+    	
+    	for (model.Salon s : salonListFromDatabase) {
+    	FXMLLoader loader = new FXMLLoader();
+    	loader.setLocation(getClass().getResource("/fxml/tab.fxml"));
+    	Parent root = loader.load();
+    	
+    	Tab tab = new Tab("LaruBeauty", root);
+    	Tab tab1 = new Tab("DonCorleone Barbershop", root);
+    	
+    	
+   	tabPane.getChildrenUnmodifiable();
+    	}
+    	     
+    
         
-   //     salonsTabPane.getChildren().add(tab);
+      Tab selectedTab = tabPane.getSelectionModel().getSelectedItem();
     }
 }

@@ -30,27 +30,27 @@
                   </ImageView>
                   <TabPane fx:id="salonTabPane" layoutX="18.0" layoutY="255.0" prefHeight="298.0" prefWidth="676.0" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
-                      <Tab fx:id="LaruBeauty" onSelectionChanged="#handleLaruBeautySelected" text="Laru Beauty">
+                      <Tab text="Laru Beauty">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="282.0" prefWidth="606.0" />
                         </content>
                       </Tab>
-                      <Tab fx:id="HiltonSpa" onSelectionChanged="#handleHiltonSpaSelected" text="Hilton Spa">
+                      <Tab text="Hilton Spa">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                         </content>
                       </Tab>
-                        <Tab fx:id="CorleoneBarbershop" onSelectionChanged="#handleCorleoneBarbershopSelected" text="Corleone Barbershop">
+                        <Tab text="Corleone Barbershop">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                            </content>
                         </Tab>
-                        <Tab fx:id="LuxBeauty" onSelectionChanged="#handleLuxBeautySelected" text="LuxBeauty">
+                        <Tab text="LuxBeauty">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                            </content>
                         </Tab>
-                        <Tab fx:id="LPBeauty" onSelectionChanged="#handleLPBeauty" text="LPBeauty">
+                        <Tab text="LPBeauty">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                            </content>

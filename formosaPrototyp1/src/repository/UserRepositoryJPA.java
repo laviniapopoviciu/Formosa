@@ -17,7 +17,6 @@ public class UserRepositoryJPA implements UserRepository{
 	
 	private static final String PERSISTANCE_UNIT_NAME = "user_jpa";
 
-	@Override
 	public void add(User user) {
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTANCE_UNIT_NAME);
@@ -78,26 +77,26 @@ public class UserRepositoryJPA implements UserRepository{
 		return Optional.ofNullable(user);
 	}
 
-	@Override
-	public List<User> readAll() {
-		
-		List<User> users = new ArrayList<>();
+	
+public List<User> readAll() {
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTANCE_UNIT_NAME);
 		EntityManager em = emf.createEntityManager();
+
+		EntityTransaction et = em.getTransaction();
+
+		System.out.println("Read all Users");
 		
-		EntityTransaction transaction = em.getTransaction();
+		et.begin();
+		List<User> users = new ArrayList<>();
 		
-		transaction.begin();
+		TypedQuery<User> query = em.createNamedQuery("readAllUsers", User.class);
+		users = query.getResultList();
 		
-		//TypedQuery<User> query = em.createQuery("select ph from Photo ph", Photo.class);
-	//	photos = query.getResultList();
-		
-		transaction.commit();
+		et.commit();
 		
 		em.close();
 		emf.close();
-		
 		
 		return users;
 	}

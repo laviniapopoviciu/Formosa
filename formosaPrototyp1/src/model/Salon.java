@@ -20,7 +20,7 @@ public class Salon implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	@OneToMany
+	@ManyToMany
 	private List<Service> services;
 	
 	@ManyToMany
