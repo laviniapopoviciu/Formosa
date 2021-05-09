@@ -29,29 +29,31 @@ public class Appointment implements Serializable {
 	
 	@ManyToOne
 	private User user;
-	
+	private CustomerType customerType;
 	private Date beginDate;
 	private Date endDate;
 	
 	
 	
 	
-	public Appointment(Salon salon, Service service, User user, Date beginDate, Date endDate) {
+	public Appointment(Salon salon, Service service, User user, CustomerType customerType, Date beginDate, Date endDate) {
 		super();
 		this.salon = salon;
 		this.service = service;
 		this.user = user;
+		this.customerType=customerType;
 		this.beginDate = beginDate;
 		this.endDate = endDate;
 	}
 
 	//for the Database
-	public Appointment(long id, Salon salon, Service service, User user, Date beginDate, Date endDate) {
+	public Appointment(long id, Salon salon, Service service, User user, CustomerType customerType, Date beginDate, Date endDate) {
 		super();
 		this.id = id;
 		this.salon = salon;
 		this.service = service;
 		this.user = user;
+		this.customerType=customerType;
 		this.beginDate = beginDate;
 		this.endDate = endDate;
 	}
@@ -78,6 +80,23 @@ public class Appointment implements Serializable {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+	
+
+	public Salon getSalon() {
+		return salon;
+	}
+
+	public void setSalon(Salon salon) {
+		this.salon = salon;
+	}
+
+	public CustomerType getCustomerType() {
+		return customerType;
+	}
+
+	public void setCustomerType(CustomerType customerType) {
+		this.customerType = customerType;
 	}
 
 	public Date getBeginDate() {

@@ -8,16 +8,14 @@ import model.User;
 public interface UserRepository {
 
 	static void add(User user) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	Optional<User> read(long id);
 
-	static List<User> readAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	 List<User> readAll() ;
+	
 
 	User updateAccount(User user);
 

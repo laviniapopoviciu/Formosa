@@ -29,22 +29,25 @@ public class Salon implements Serializable {
 
 	private String businessName;
 	private String businessDescription;
+	
+	private List<CustomerType> customerTypes;
 	private String address;
 	
 	public Salon() {}
 	
-	public Salon(List<Service> services , List<Appointment> appointments, String businessName, String businessDescription,
+	public Salon(List<Service> services , List<Appointment> appointments, String businessName, String businessDescription, List<CustomerType> customerTypes,
 			String address) {
 		super();
 		this.services = services;
 		this.appointments = appointments;
 		this.businessName = businessName;
 		this.businessDescription = businessDescription;
+		this.customerTypes=customerTypes;
 		this.address = address;
 	}
 	
 	//for the Database
-	public Salon(long id, List<Service> services , List<Appointment> appointments, String businessName, String businessDescription,
+	public Salon(long id, List<Service> services , List<Appointment> appointments, String businessName, String businessDescription, List<CustomerType> customerTypes,
 			String address) {
 		super();
 		this.id = id;
@@ -52,6 +55,7 @@ public class Salon implements Serializable {
 		this.appointments = appointments;
 		this.businessName = businessName;
 		this.businessDescription = businessDescription;
+		this.customerTypes=customerTypes;
 		this.address = address;
 	}
 
@@ -85,6 +89,14 @@ public class Salon implements Serializable {
 
 	public void setBusinessDescription(String businessDescription) {
 		this.businessDescription = businessDescription;
+	}
+
+	public List<CustomerType> getCustomerTypes() {
+		return getCustomerTypes();
+	}
+
+	public void setCustomerTypes(List<CustomerType> customerTypes) {
+		this.customerTypes = customerTypes;
 	}
 
 	public String getAddress() {

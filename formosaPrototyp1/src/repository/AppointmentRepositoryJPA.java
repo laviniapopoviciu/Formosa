@@ -36,18 +36,27 @@ import model.Appointment;
 		
 		transaction.commit();
 		
-		em.close();
-		emf.close();
+	em.close();
+	emf.close();
+		System.out.println("Appointment added");
 		
 		
+		
+ 
+
 	}
 
 
 
 	@Override
 	public void delete(Appointment appointment) {
-		// TODO Auto-generated method stub
-		
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTANCE_UNIT_NAME);
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction transaction = em.getTransaction();
+
+		transaction.begin();
+		em.remove(appointment);
+		transaction.commit();
 	}
 
 
@@ -86,16 +95,16 @@ List<Appointment> appointments = new ArrayList<>();
 		EntityTransaction transaction = em.getTransaction();
 		
 		transaction.begin();
-		
-		//TypedQuery<Salonr> query = em.createQuery("select ph from Photo ph", Photo.class);
-	//	salons = query.getResultList();
+		TypedQuery<Appointment> query = em.createNamedQuery("readAllAppointments", Appointment.class);
+		appointments = query.getResultList();
+	
 		
 		transaction.commit();
 		
 		em.close();
 		emf.close();
 		
-		
+		System.err.println("all Appointments: " + appointments);
 		return appointments;
 	}
 
@@ -104,3 +113,16 @@ List<Appointment> appointments = new ArrayList<>();
 	 
 
 }
+  
+
+	 
+
+	 
+
+	 
+
+
+	 
+
+	 
+

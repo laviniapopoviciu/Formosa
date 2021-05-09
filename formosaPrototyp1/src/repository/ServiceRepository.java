@@ -2,6 +2,7 @@ package repository;
 import java.util.List;
 import java.util.Optional;
 
+import model.Salon;
 import model.Service;
 
 public interface ServiceRepository {
@@ -14,7 +15,10 @@ public interface ServiceRepository {
 
 		List<Service> readAll();
 
-		 
+		Service updateService(Service service);
+
+		void delete(Service service);
+
 
 	}
 

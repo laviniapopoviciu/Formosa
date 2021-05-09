@@ -25,12 +25,6 @@ public class Service implements Serializable {
 	private double price;
 	
 	 
-	public double getPrice() {
-		return price;
-	}
-	public void setPrice(double price) {
-		this.price = price;
-	}
 	public Service(ServiceType type, double price) {
 		super();
 		this.type = type;
@@ -42,6 +36,22 @@ public class Service implements Serializable {
 		super();
 		this.id = id;
 		this.type = type;
+		this.price = price;
+	}
+
+	public ServiceType getType() {
+		return type;
+	}
+
+	public void setType(ServiceType type) {
+		this.type = type;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
 		this.price = price;
 	}
 

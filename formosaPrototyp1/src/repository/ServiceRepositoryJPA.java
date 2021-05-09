@@ -8,6 +8,8 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
+import jakarta.persistence.TypedQuery;
+import model.Salon;
 import model.Service;
  
 
@@ -70,8 +72,9 @@ import model.Service;
 		
 		transaction.begin();
 		
-		//TypedQuery<User> query = em.createQuery("select ph from Photo ph", Photo.class);
-	//	photos = query.getResultList();
+		TypedQuery<Service> query = em.createNamedQuery("readAllServices", Service.class);
+		services = query.getResultList();
+		
 		
 		transaction.commit();
 		
@@ -80,6 +83,42 @@ import model.Service;
 		
 		
 		return services;
+	}
+
+
+
+
+	@Override
+	public Service updateService(Service service) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTANCE_UNIT_NAME);
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction transaction = em.getTransaction();
+		transaction.begin();
+
+		Service updateService = em.merge(service);
+		transaction.commit();
+		em.close();
+		emf.close();
+		System.out.println("Service updated");
+
+		return updateService;
+	}
+
+
+
+
+	@Override
+	public void delete(Service service) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTANCE_UNIT_NAME);
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction transaction = em.getTransaction();
+
+		transaction.begin();
+		em.remove(service);
+		transaction.commit();
+		em.close();
+		emf.close();
+		
 	}
 
 	

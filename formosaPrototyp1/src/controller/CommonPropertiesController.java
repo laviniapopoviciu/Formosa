@@ -1,5 +1,6 @@
 package controller;
 
+import application.Constants;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
@@ -9,21 +10,23 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.Appointment;
+import model.Salon;
+import model.Service;
 import model.User;
+
+import repository.AppointmentRepository;
+import repository.AppointmentRepositoryJPA;
+import repository.SalonRepository;
+import repository.SalonRepositoryJPA;
+import repository.ServiceRepository;
+import repository.ServiceRepositoryJPA;
 import repository.UserRepository;
 import repository.UserRepositoryJPA;
 
-public class CommonPropertiesController {
+public class CommonPropertiesController extends Constants{
 	
 	
-	public static final String PATH_TO_START_FXML = "/application/Start.fxml";
-	public static final String PATH_TO_LOGIN_FXML = "/application/Login.fxml";
-	public static final String PATH_TO_MY_ACCOUNT_FXML = "/application/MyAccount.fxml";
-	public static final String PATH_TO_SEARCH_RESULT_FXML = "/application/SearchResult.fxml";
-	public static final String PATH_TO_PARTNER_FXML = "/application/Partner.fxml";
-	public static final String PATH_TO_SALONS_FXML = "/application/Salons.fxml";
-	public static final String PATH_TO_REGISTER_FXML = "/application/Register.fxml";
-
 	static ObservableList<Node> getChildren() {
 		return null;
 	}
@@ -55,8 +58,15 @@ public class CommonPropertiesController {
 	
 	// Account entity repository
 		static UserRepository userRepository = new UserRepositoryJPA();  
-//		static ObservableList<User> userList = FXCollections.observableArrayList(UserRepository.readAll()); //reads all Users List
+		static ObservableList<User> userList = FXCollections.observableArrayList(UserRepository.readAll()); //reads all Users List
 		static ObjectProperty<User> selectedUser = new SimpleObjectProperty<User>(); //selects current User
 
+		static AppointmentRepository appointmentRepository = new AppointmentRepositoryJPA();
+		static ObservableList<Appointment> appointments = FXCollections.observableArrayList(appointmentRepository.readAll());
 		
+		static SalonRepository salonRepository = new SalonRepositoryJPA();
+		static ObservableList<Salon> salons = FXCollections.observableArrayList(salonRepository.readAll());
+		
+		static ServiceRepository serviceRepository = new ServiceRepositoryJPA();
+		static ObservableList<Service> services = FXCollections.observableArrayList(serviceRepository.readAll());	
 }

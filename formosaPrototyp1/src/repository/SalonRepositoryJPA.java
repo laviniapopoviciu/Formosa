@@ -35,11 +35,12 @@ import model.Service;
 		em.persist(salon);
 		
 		transaction.commit();
+		System.out.println("Salon added");
+//		em.close();
+//		emf.close();
 		
-		em.close();
-		emf.close();
-		
-		
+	
+	
 	}
 
 
@@ -47,8 +48,17 @@ import model.Service;
 
 	@Override
 	public Salon updateSalonInfo(Salon salon) {
-		// TODO Auto-generated method stub
-		return null;
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTANCE_UNIT_NAME);
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction transaction = em.getTransaction();
+		transaction.begin();
+
+		Salon updateSalon = em.merge(salon);
+		transaction.commit();
+
+		System.out.println("Salon updated");
+
+		return updateSalon;
 	}
 
 
@@ -56,7 +66,13 @@ import model.Service;
 
 	@Override
 	public void delete(Salon salon) {
-		// TODO Auto-generated method stub
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTANCE_UNIT_NAME);
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction transaction = em.getTransaction();
+
+		transaction.begin();
+		em.remove(salon);
+		transaction.commit();
 		
 	}
 
@@ -97,8 +113,8 @@ List<Salon> salons = new ArrayList<>();
 		
 		transaction.begin();
 		
-		//TypedQuery<Salonr> query = em.createQuery("select ph from Photo ph", Photo.class);
-	//	salons = query.getResultList();
+		TypedQuery<Salon> query = em.createNamedQuery("readAllSalons", Salon.class);
+		salons = query.getResultList();
 		
 		transaction.commit();
 		
