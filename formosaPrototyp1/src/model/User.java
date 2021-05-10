@@ -35,7 +35,7 @@ public class User implements Serializable {
 
 	}
 
-	public User(String username,String password, String firstName, String lastName, String email) {
+	public User(String username,String password, String firstName, String lastName, String email,List<Appointment> appointments) {
 
 		super();
 		this.email=email;
@@ -43,12 +43,13 @@ public class User implements Serializable {
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.appointments=appointments;
 		 
 		
 	}
 
 	// For the Database
-	public User(Long id, String username, String password, String firstName, String lastName, String email) {
+	public User(Long id, String username, String password, String firstName, String lastName, String email,List<Appointment> appointments) {
 		super();
 		this.id = id;
 		this.username=username;
@@ -56,6 +57,7 @@ public class User implements Serializable {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email=email;
+		this.appointments=appointments;
 		
 	}
 

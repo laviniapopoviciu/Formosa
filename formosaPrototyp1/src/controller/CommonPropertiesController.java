@@ -57,16 +57,16 @@ public class CommonPropertiesController extends Constants{
 	
 	
 	// Account entity repository
-		static UserRepository userRepository = new UserRepositoryJPA();  
-		static ObservableList<User> userList = FXCollections.observableArrayList(UserRepository.readAll()); //reads all Users List
+		static UserRepository userRepository = new UserRepositoryJPA(); 
+//		static ObservableList<User> userList = FXCollections.observableArrayList(UserRepository.readAll()); //reads all Users List
 		static ObjectProperty<User> selectedUser = new SimpleObjectProperty<User>(); //selects current User
 
 		static AppointmentRepository appointmentRepository = new AppointmentRepositoryJPA();
-		static ObservableList<Appointment> appointments = FXCollections.observableArrayList(appointmentRepository.readAll());
+//		static ObservableList<Appointment> appointments = FXCollections.observableArrayList(appointmentRepository.readAll());
 		
 		static SalonRepository salonRepository = new SalonRepositoryJPA();
-		static ObservableList<Salon> salons = FXCollections.observableArrayList(salonRepository.readAll());
+//		static ObservableList<Salon> salons = FXCollections.observableArrayList(salonRepository.readAll());
 		
 		static ServiceRepository serviceRepository = new ServiceRepositoryJPA();
-		static ObservableList<Service> services = FXCollections.observableArrayList(serviceRepository.readAll());	
+//		static ObservableList<Service> services = FXCollections.observableArrayList(serviceRepository.readAll());	
 }

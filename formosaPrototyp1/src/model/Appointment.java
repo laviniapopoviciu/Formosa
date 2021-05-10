@@ -3,6 +3,7 @@ package model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,32 +31,32 @@ public class Appointment implements Serializable {
 	@ManyToOne
 	private User user;
 	private CustomerType customerType;
-	private Date beginDate;
-	private Date endDate;
+//	private Date beginDate;
+//	private Date endDate;
 	
 	
 	
 	
-	public Appointment(Salon salon, Service service, User user, CustomerType customerType, Date beginDate, Date endDate) {
+	public Appointment(long l, List<Service> services, User user, CustomerType customerType) {
 		super();
-		this.salon = salon;
-		this.service = service;
+	
+		this.service = (Service) services;
 		this.user = user;
 		this.customerType=customerType;
-		this.beginDate = beginDate;
-		this.endDate = endDate;
+	//	this.beginDate = beginDate;
+	//	this.endDate = endDate;
 	}
 
 	//for the Database
-	public Appointment(long id, Salon salon, Service service, User user, CustomerType customerType, Date beginDate, Date endDate) {
+	public Appointment(long id, Salon salon, Service service, User user, CustomerType customerType) {
 		super();
 		this.id = id;
 		this.salon = salon;
 		this.service = service;
 		this.user = user;
 		this.customerType=customerType;
-		this.beginDate = beginDate;
-		this.endDate = endDate;
+	//	this.beginDate = beginDate;
+	//	this.endDate = endDate;
 	}
 
 	public long getId() {
@@ -99,20 +100,20 @@ public class Appointment implements Serializable {
 		this.customerType = customerType;
 	}
 
-	public Date getBeginDate() {
-		return beginDate;
-	}
-
-	public void setBeginDate(Date beginDate) {
-		this.beginDate = beginDate;
-	}
-
-	public Date getEndDate() {
-		return endDate;
-	}
-
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
+//	public Date getBeginDate() {
+//		return beginDate;
+//	}
+//
+//	public void setBeginDate(Date beginDate) {
+//		this.beginDate = beginDate;
+//	}
+//
+//	public Date getEndDate() {
+//		return endDate;
+//	}
+//
+//	public void setEndDate(Date endDate) {
+//		this.endDate = endDate;
+//	}
 
 }

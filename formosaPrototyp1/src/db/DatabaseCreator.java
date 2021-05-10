@@ -15,7 +15,6 @@ import model.Service;
 import model.ServiceType;
 import model.User;
 
-
 public class DatabaseCreator {
 	public static void main(String[] args) {
 
@@ -38,19 +37,19 @@ private static void insertDummyData() {
 		
 		EntityTransaction et = em.getTransaction();
 		
-		List<Service> services = List.of(new Service(ServiceType.HAARSCHNITT, 99.0));
-		
-	//	Service(long id, ServiceType type, double price)
-		
-//Salon(long id, List<Service> services , List<Appointment> appointments, String businessName, String businessDescription, List<CustomerType> customerTypes, String address)
-//		Salon salon = new Salon(services, null,  "LaruBeauty", "Dein Beautywelt für alle Beautyleistungen",
-//				"Kärntenstraße 10, 1010 Wien");
+		List<CustomerType> customerTypes = List.of(CustomerType.DAMEN,CustomerType.KINDER);
 
-//	List<Salon> salonList = List.of(new Salon(0l, ServiceType , List<Appointment> appointments, "LaruBeauty", "Dein Beautywelt für alle Beautyleistungen",
-//			"Kärntenstraße 10, 1010 Wien"));
-//	List<Appointment> appointmentList = List.of( new Appointment(0l, "LaruBeauty", ServiceType.HAARSCHNITT, user, "20.05.2021 10:30", "20.05.2021 11:30"));
-	
-	User user = new User(1l,"Lavi", "test", "Lavinia", "Popoviciu", "lavinia.popovciu@hotmail.com");
+		
+		List<Service> services = List.of(new Service(0l,ServiceType.HAARSCHNITT, 99.0),
+				new Service(0l,ServiceType.HAARENTFERNUNG,120));
+		
+		List<Salon> salons = List.of(new Salon(0l, services, null, "LaruBeauty", "Dein Beauty Welt geöffnet jeden Tag Montag bis Samstag  10-19 Uhr", customerTypes,"Landstrasse 50 1030 Wien"));
+		
+		List<Appointment> appointments =List.of(new Appointment(0l, services, new User(1l,"Lavi", "test", "Lavinia", "Popoviciu", "lavinia.popovciu@hotmail.com",null), CustomerType.DAMEN));
+		
+	 		
+		User user = new User(1l,"Laura", "test", "Laura", "Dan", "danlaura360@yahoo.com",appointments);
+		
 		
 		et.begin();
 		
